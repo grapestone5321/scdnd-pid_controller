@@ -27,19 +27,26 @@ The vehicle successfully drives a lap around the track. No tire leaves the driva
 
 
 #### The effect each of the P, I, D components: 
-The effect of the P, I, D component of the PID algorithm in the implementation. Is it what you expected? Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
+The effect of the P, I, D component of the PID algorithm in the implementation is expected. Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
 
 - The effect of the P component
 
-The cross track error, cte is the current y position of the robot (our reference is a horizontal line) along the x-axis. To get the steering value we multiply the tau parameter with the cte. We then call the move method which causes the robot to move based on the steer and speed values. Add the x and y coordinates to the respective lists and then return them at the end.
+By turning, inversely proportional to the y value, using aparameter tau that sets the response strength of the proportional controller.The robot turns towards the x axis, drive in that direction, overshoot, turn around , and drive back.
+
+The cross track error, cte is the current y position of the robot (the reference is a horizontal line) along the x-axis. To get the steering value the tau parameter is multiplied with the cte. Then the move method, which causes the robot to move based on the steer and speed values, is called. The x and y coordinates are added to the respective lists and then returned them at the end.
 
 - The effect of the D component
 
-This is very similar to the P controller. We've added the prev_cte variable which is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. We then put it all together with the new tau_d parameter to calculate the new steering value, -tau_p * cte - tau_d * diff_cte.
+There is a way to void the overshoot. Drivivg an osillating car is no fun. In PD-control my steering alpha is no just related to CTE by virtue of the gain parameter tau p, but also to the temporal devivative of the CTE. What this means that the cat has turned enough to reduce the CTE, it won't just go shootong for the x axis, but it will notice that it's already reducing the error.The error is becoming smaller over time.
+
+
+This is very similar to the P component. The prev_cte variable is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. Then it is put with the new tau_d parameter to calculate the new steering value, - tau_d * diff_cte.
+
+
 
 - The effect of the I component
 
-With the integral term we're keeping track of all the previous CTEs, initially we set int_cte to 0 and then add the current cte term to the count int_cte += cte. Finally we update the steering value, -tau_p * cte - tau_d * diff_cte - tau_i * int_cte with the new tau_i parameter.
+With the integral term initially int_cte is set to 0 and then the current cte term is added to the count int_cte += cte. Then the steering value, - tau_i * int_cte with the new tau_i parameter is updated.
 
 
 #### The final hyperparameters: 
