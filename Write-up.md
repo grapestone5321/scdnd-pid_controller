@@ -29,21 +29,17 @@ The vehicle successfully drives a lap around the track. No tire leaves the driva
 #### The effect each of the P, I, D components: 
 The effect of the P, I, D component of the PID algorithm in the implementation. Is it what you expected? Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
 
-- Implement P Controller
-
-In the following quiz you'll implement a P controller.
-
-Note that in all of the following programming quizzes the run function has been changed to return the x and y coordinates, or trajectory of the robot instead of printing the values. These will then be plotted against the reference line which should give you a better intuition for what the controller is doing. Thus, the code will look slightly different than in the videos but the general controller algorithms remain the same
+- The effect of the P component
 
 The cross track error, cte is the current y position of the robot (our reference is a horizontal line) along the x-axis. To get the steering value we multiply the tau parameter with the cte. We then call the move method which causes the robot to move based on the steer and speed values. Add the x and y coordinates to the respective lists and then return them at the end.
 
-- PD Controller
+- The effect of the D component
 
 This is very similar to the P controller. We've added the prev_cte variable which is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. We then put it all together with the new tau_d parameter to calculate the new steering value, -tau_p * cte - tau_d * diff_cte.
 
-- PID Implementation
+- The effect of the I component
 
-Ok. With the integral term we're keeping track of all the previous CTEs, initially we set int_cte to 0 and then add the current cte term to the count int_cte += cte. Finally we update the steering value, -tau_p * cte - tau_d * diff_cte - tau_i * int_cte with the new tau_i parameter.
+With the integral term we're keeping track of all the previous CTEs, initially we set int_cte to 0 and then add the current cte term to the count int_cte += cte. Finally we update the steering value, -tau_p * cte - tau_d * diff_cte - tau_i * int_cte with the new tau_i parameter.
 
 
 #### The final hyperparameters: 
