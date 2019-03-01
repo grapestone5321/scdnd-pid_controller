@@ -11,7 +11,7 @@ The simulator will provide you the cross track error (CTE) and the velocity (mph
 One more thing. The speed limit has been increased from 30 mph to 100 mph. Get ready to channel your inner Vin Diesel and try to drive SAFELY as fast as possible! NOTE: you don't have to meet a minimum speed to pass.
 
 
-## Project Instructions
+#### Project Instructions
 You can solve this project using the workspaces we have prepared for you here or you can clone/fork the project's template files from the project repository if you want to install all on your local machine. Have a look at the rubric as well!
 
 Build a PID controller and tune the PID hyperparameters by applying the general processing flow as described in the previous lessons.
