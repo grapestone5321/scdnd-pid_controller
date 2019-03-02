@@ -49,7 +49,7 @@ With the integral term initially int_cte is set to 0 and then the current cte te
 
 
 #### The final hyperparameters: 
-The final hyperparameters (P, I, D coefficients) are chosen through manual tuning. This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!
+The final hyperparameters (P, I, D coefficients) are chosen through manual tuning. The following values for components P,I,D have been used: Kp = 0.2 Ki = 0.0001 Kd = 3.0. This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!
 
 
 #### Simulation: 
