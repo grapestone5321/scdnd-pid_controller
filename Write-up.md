@@ -52,7 +52,7 @@ If you drive a car and your normal steering mode leads you to a trajectory far a
 
 
 #### The final hyperparameters: 
-The final hyperparameters (P, I, D coefficients) are chosen: Kp = 0.12 Ki = 0.005 Kd = 1.8. This have been done through manual tuning.
+The final hyperparameters (P, I, D coefficients) are chosen: Kp = 0.2 Ki = 0.003 Kd = 3.0. This have been done through manual tuning.
 
 The effect of the P, I, D component of the PID algorithm in the implementation is what I expected. The vehicle successfully drives a lap around the track. No tire leaves the drivable portion of the track surface. The car does not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
 
