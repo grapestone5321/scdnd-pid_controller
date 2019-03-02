@@ -27,24 +27,28 @@ You can solve this project using the workspaces we have prepared for you here or
 
 - The effect of the P component
 
-By turning, inversely proportional to the y value, using aparameter tau that sets the response strength of the proportional controller.The robot turns towards the x axis, drive in that direction, overshoot, turn around , and drive back.
-
 The cross track error, cte is the current y position of the robot (the reference is a horizontal line) along the x-axis. To get the steering value the tau parameter is multiplied with the cte. Then the move method, which causes the robot to move based on the steer and speed values, is called. The x and y coordinates are added to the respective lists and then returned them at the end.
 
+By turning, inversely proportional to the y value, using aparameter tau that sets the response strength of the proportional controller.The robot turns towards the x axis, drive in that direction, overshoot, turn around , and drive back.
+
+
+
 - The effect of the D component
+
+The prev_cte variable is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. Then it is put with the new tau_d parameter to calculate the new steering value, - tau_d * diff_cte.
+
 
 There is a way to void the overshoot. Drivivg an osillating car is no fun. In PD-control my steering alpha is no just related to CTE by virtue of the gain parameter tau p, but also to the temporal devivative of the CTE. What this means that the cat has turned enough to reduce the CTE, it won't just go shootong for the x axis, but it will notice that it's already reducing the error.The error is becoming smaller over time.
 
 
-This is very similar to the P component. The prev_cte variable is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. Then it is put with the new tau_d parameter to calculate the new steering value, - tau_d * diff_cte.
-
-
-
 - The effect of the I component
+
+With the integral term initially int_cte is set to 0 and then the current cte term is added to the count int_cte += cte. Then the steering value, - tau_i * int_cte with the new tau_i parameter, is updated.
+
 
 If you drive a car and your normal steering mode leads you to a trajectory far away from the goal, then what I submit you do is you notice over a long period of time you can't get closer. So you start steering more and more the more time goes by to the right to compensate this bias. As a result, when you drive you steer the car this way. Todo so, you need a sustained situation of large error. That's measured by the integral or the sum of the CTE over time. Let's make a new controller where steering is proportional to the CTE before. It's equally proportional to the differential of the CTE, but naw it's also proportional to what's called the integral or the sum of all the CTE you ever observed. If we have a constant CTE of , say, 0.8 and the sum will increace by o.8 for each time unit, it'll become larger, and eventually it'll correct the robot's motion.
 
-With the integral term initially int_cte is set to 0 and then the current cte term is added to the count int_cte += cte. Then the steering value, - tau_i * int_cte with the new tau_i parameter is updated.
+
 
 
 #### The final hyperparameters: 
