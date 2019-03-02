@@ -38,7 +38,7 @@ By turning, inversely proportional to the y value. A parameter tau that is set t
 The prev_cte variable is assigned to the previous CTE and diff_cte, the difference between the current CTE and previous CTE. Then it is put with the new tau_d parameter to calculate the new steering value, - tau_d * diff_cte.
 
 
-There is a way to void the overshoot. Drivivg an osillating car is no fun. In PD-control my steering alpha is no just related to CTE by virtue of the gain parameter tau p, but also to the temporal devivative of the CTE. What this means that the cat has turned enough to reduce the CTE, it won't just go shootong for the x axis, but it will notice that it's already reducing the error.The error is becoming smaller over time.
+There is a way to void the overshoot. Drivivg an osillating car is no fun. In PD-control the steering alpha is not just related to CTE by virtue of the gain parameter tau p, but also to the temporal devivative of the CTE. What this means that the car has turned enough to reduce the CTE, it won't just go shootong for the x axis, but it will notice that it's already reducing the error. The error is becoming smaller over time.
 
 
 - The effect of the I component
