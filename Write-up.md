@@ -18,6 +18,10 @@ In this project you'll revisit the lake race track from the Behavioral Cloning P
 #### Instructions:
 You can solve this project using the workspaces we have prepared for you here or you can clone/fork the project's template files from the project repository if you want to install all on your local machine. Have a look at the rubric as well! Build a PID controller and tune the PID hyperparameters by applying the general processing flow as described in the previous lessons. Test your solution on the simulator! When the vehicle is able to drive successfully around the track, submit! Remember to include a file addressing the reflection portion of the project in .txt, .md, .html, or .pdf format. Try to see how fast you get the vehicle to SAFELY go!
 
+
+![alt text][image1]
+
+
 ## Reflection
 #### The effect each of the P, I, D components: 
 The effect of the P, I, D component of the PID algorithm in the implementation is expected. Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
@@ -53,7 +57,6 @@ The vehicle successfully drives a lap around the track. No tire leaves the driva
 
 
 
-![alt text][image1]
 
 ![alt text][image2]
 
