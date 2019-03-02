@@ -52,7 +52,7 @@ The final hyperparameters (P, I, D coefficients) are chosen: Kp = 0.12 Ki = 0.00
 
 The vehicle successfully drives a lap around the track. No tire leaves the drivable portion of the track surface. The car does not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
 
-The effect of the P, I, D component of the PID algorithm in the implementation is expected. Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
+The effect of the P, I, D component of the PID algorithm in the implementation is expected. 
 
 
 ![alt text][image2]
