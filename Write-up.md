@@ -49,10 +49,8 @@ With the integral term initially int_cte is set to 0 and then the current cte te
 
 
 #### The final hyperparameters: 
-The final hyperparameters (P, I, D coefficients) are chosen through manual tuning. The following values for components P,I,D have been used: Kp = 0.2 Ki = 0.0001 Kd = 3.0. This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!
+The final hyperparameters (P, I, D coefficients) are chosen: Kp = 0.2 Ki = 0.0001 Kd = 3.0. This have been done through manual tuning.
 
-
-#### Simulation: 
 The vehicle successfully drives a lap around the track. No tire leaves the drivable portion of the track surface. The car does not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
 
 
