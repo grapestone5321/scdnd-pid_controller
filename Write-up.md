@@ -29,7 +29,7 @@ You can solve this project using the workspaces we have prepared for you here or
 
 The cross track error, cte is the current y position of the robot (the reference is a horizontal line) along the x-axis. To get the steering value the tau parameter is multiplied with the cte. Then the move method, which causes the robot to move based on the steer and speed values, is called. The x and y coordinates are added to the respective lists and then returned them at the end.
 
-By turning, inversely proportional to the y value, using aparameter tau that sets the response strength of the proportional controller.The robot turns towards the x axis, drive in that direction, overshoot, turn around , and drive back.
+By turning, inversely proportional to the y value. A parameter tau that is set the response strength of the proportional controller. The car turns towards the x axis, drives in that direction, overshoots, turns around , and drives back.
 
 
 
